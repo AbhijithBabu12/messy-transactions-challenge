@@ -1,0 +1,26 @@
+{
+  "input_rows": 73,
+  "valid_rows": 53,
+  "invalid_rows": 20,
+  "row_count_reconciliation": {
+    "valid_rows_plus_invalid_rows": 73,
+    "matches_input_rows": true
+  },
+  "duplicates": {
+    "repeated_transaction_id_groups": 2,
+    "rows_with_repeated_transaction_id": 4,
+    "extra_rows_from_repeated_transaction_ids": 2,
+    "likely_duplicate_groups": 1,
+    "likely_duplicate_rows_flagged_after_first": 2,
+    "rows_flagged_as_likely_duplicate": 2,
+    "note": "Rows with repeated transaction IDs are marked invalid because the ID collision is ambiguous. For likely duplicates, the first matching signature is retained as the canonical candidate and later rows are flagged; signature uses normalized customer, amount, date, and order_id, not status."
+  },
+  "revenue": {
+    "definition": "total_revenue is the sum of valid, non-duplicate rows with status=paid; pending, cancelled, refund, invalid, repeated-ID, and likely-duplicate rows are excluded.",
+    "total_revenue": "81851.00",
+    "valid_refund_amount_total": "1200.00",
+    "net_paid_less_refunds": "80651.00",
+    "counted_paid_rows": 33,
+    "counted_refund_rows": 1
+  }
+}
